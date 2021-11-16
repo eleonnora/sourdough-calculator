@@ -45,7 +45,7 @@ label {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     width: 400px;
-    height: 400px;
+    height: 330px;
 }
 
 .dough::before,
@@ -71,11 +71,11 @@ h1 {
 }
 
 h3 {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 p {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .dough-form {
