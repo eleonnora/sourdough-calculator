@@ -84,7 +84,6 @@ p {
     right: 0;
     bottom: 0;
     left: 0;
-    height: 220;
     width: 55%;
     background-color: var(--light-color);
     color: var(--primary-color);
@@ -102,7 +101,6 @@ p {
 }
 
 .output input[type='text']{
-    margin: 30px 0;
     border: 0;
     width: 100%;
     padding: 3px;
@@ -129,10 +127,10 @@ p {
 
 .footer {
     color: var(--primary-color);
+    background-color: var(--light-color);
     text-align: center;
     width: 100%;
     height: 40px;
-    margin: 30px;
     bottom: 0;
     position: fixed;
 }
@@ -188,6 +186,10 @@ p {
     p {
         font-size: 11px;
     }
+
+    .legend {
+        width: 80%;
+    }
     
     .pages a {
         font-size: 15px;
@@ -195,6 +197,10 @@ p {
 
     .output input[type='text']{
         font-size: 16px;
+    }
+
+    .dough-form {
+        height: 200px;
     }
     
     .dough-form input[type='number']{
