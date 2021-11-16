@@ -29,7 +29,7 @@
                         <input type="number" id="percentage" placeholder="0" required>
                     </div>
                     <div class="output">
-                        <input type="text" id="water" placeholder="Water amount 0g" disabled>
+                        <input type="text" id="water" value="Water amount 0g" disabled>
                     </div>
                 </div>
                 <div class="legend">
@@ -59,9 +59,9 @@
                 let water = (percentage*(flour + starter/2) - (100 * (starter/2)))/100;
 
                 if (water < 0)
-                    document.getElementById('water').setAttribute('placeholder', "Amount is less than 0")
+                    document.getElementById('water').setAttribute('value', "Amount is less than 0")
                 else 
-                    document.getElementById('water').setAttribute('placeholder', water ? water + "g of water" : "Cannot be calculated")
+                    document.getElementById('water').setAttribute('value', water ? water + "g of water" : "Cannot be calculated")
             }
         </script>
     </body>
