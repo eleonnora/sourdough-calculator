@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sourdough</title>
+        <link rel="shortcut icon" type="image/png" href="images/sourdough_bread.png"/>
+        <meta name="description" content="Calculate the water amount needed for making sourdough usually for bread based on starter, flour amount and desired hydration percentage of sourdough.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>       
+        <section class="dough">
+            <div class="container">
+                <h1>Required ingredients for sourdough based on flour amount</h1>
+                <p class="description">Calculate ingredients based on flour amount.</p>
+                <p class="description">Assuming that starter is made of 100% hydration (same amount of water and flour).</p>
+                <div class="dough-form">
+                    <div class="dough-input">
+                        <label for="flour">Flour weight (g)</label>
+                        <input type="number" id="flour" placeholder="Enter flour weight" required>
+                    </div>
+                    <div class="dough-input">
+                        <label for="percentage">Desired hydration (%)</label>
+                        <input type="number" id="percentage" placeholder="Default 65%" required>
+                    </div>
+                    <div class="output">
+                        <input type="text" id="water" value="Water amount 0g" disabled>
+                        <input type="text" id="starter" value="Starter amount 0g" disabled>
+                        <input type="text" id="salt" value="Salt amount 0g" disabled>
+                    </div>
+                </div>
+                <a class="back" href="index.html">&#8592;</a>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>Copyright &copy 2021</p>
+        </footer>
+
+        <script>
+            document.getElementById('flour').addEventListener('input', () => calculate());
+            document.getElementById('percentage').addEventListener('input', () => calculate());
+            function calculate() {
+                const flour = parseInt(document.getElementById('flour').value) || 0;
+                const percentage = parseInt(document.getElementById('percentage').value) || 65;
+                const starter = flour * 0.2;
+                const water = (percentage*(flour + starter/2) - (100 * (starter/2)))/100;
+                const salt = flour * 0.02;
+
+                if (starter < 0)
+                    document.getElementById('starter').setAttribute('value', "Starter amount is less than 0")
+                else 
+                    document.getElementById('starter').setAttribute('value', starter ? starter + "g of starter" : "Cannot be calculated")
+
+                if (water < 0)
+                    document.getElementById('water').setAttribute('value', "Water amount is less than 0")
+                else 
+                    document.getElementById('water').setAttribute('value', water ? water + "g of water" : "Cannot be calculated")
+                
+                if (salt < 0)
+                    document.getElementById('salt').setAttribute('value', "Salt amount is less than 0")
+                else 
+                    document.getElementById('salt').setAttribute('value', salt ? salt + "g of salt" : "Cannot be calculated")
+            }
+        </script>
+    </body>
+</html>

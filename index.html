@@ -12,57 +12,15 @@
     <body>       
         <section class="dough">
             <div class="container">
-                <h1>Required amount of water for the sourdough</h1>
-                <p class="description">Calculate the water amount needed for making sourdough usually for bread - based on starter amount, flour amount and desired hydration percentage of sourdough.</p>
-                <p class="description">Assuming that starter is made of 100% hydration (same amount of water and flour).</p>
-                <div class="dough-form">
-                    <div class="dough-input">
-                        <label for="starter">Starter weight (g)</label>
-                        <input type="number" id="starter" placeholder="0" required>
-                    </div>
-                    <div class="dough-input">
-                        <label for="flour">Flour weight (g)</label>
-                        <input type="number" id="flour" placeholder="0" required>
-                    </div>
-                    <div class="dough-input">
-                        <label for="percentage">Desired hydration (%)</label>
-                        <input type="number" id="percentage" placeholder="0" required>
-                    </div>
-                    <div class="output">
-                        <input type="text" id="water" value="Water amount 0g" disabled>
-                    </div>
-                </div>
-                <div class="legend">
-                    <h3>Starter weight</h3>
-                    <p>Total amount of starter in grams - usually a combination of water and flour</p>
-                    <h3>Flour weight</h3>
-                    <p>The total amount of flour you want to use in grams</p>
-                    <h3>Desired percentage</h3>
-                    <p>Desired percentage of sourdough hydration</p>
-                    <h3>Water amount</h3>
-                    <p>The amount of water in grams that needs to be added to achieve the desired percentage of hydration of the sourdough.</p>
+                <h1>Sourdough calculator</h1>
+                <div class="container pages">
+                    <a href="ingredients.html">Calculate ingredients for sourdough based on flour amount</a>
+                    <a href="water.html">Calculate the water amount needed for sourdough based on starter amount, flour amount and desired hydration percentage</a>
                 </div>
             </div>
         </div>
         <footer class="footer">
             <p>Copyright &copy 2021</p>
         </footer>
-
-        <script>
-            document.getElementById('flour').addEventListener('input', () => calculate());
-            document.getElementById('starter').addEventListener('input', () => calculate());
-            document.getElementById('percentage').addEventListener('input', () => calculate());
-            function calculate() {
-                const starter = parseInt(document.getElementById('starter').value) || 0;
-                const flour = parseInt(document.getElementById('flour').value) || 0;
-                const percentage = parseInt(document.getElementById('percentage').value) || 0;
-                let water = (percentage*(flour + starter/2) - (100 * (starter/2)))/100;
-
-                if (water < 0)
-                    document.getElementById('water').setAttribute('value', "Amount is less than 0")
-                else 
-                    document.getElementById('water').setAttribute('value', water ? water + "g of water" : "Cannot be calculated")
-            }
-        </script>
     </body>
 </html>
