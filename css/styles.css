@@ -32,19 +32,17 @@ label {
     height: 250px;
     background-color: var(--secondary-color);
     color: var(--light-color);
-    position: fixed;
-    right: 0;
-    left: 0;
+    position: relative;
 }
 
 .legend {
     display: grid;
     color:var(--primary-color);
-    margin: 20px;
+    margin: 40px;
     padding: 5px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    width: 400px;
+    width: 300px;
     height: 330px;
 }
 
@@ -128,12 +126,9 @@ p {
 }
 
 .footer {
-    color: var(--light-color);
-    background-color: var(--secondary-color);
+    color: var(--primary-color);
     text-align: center;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
     height: 40px;
+    margin: 30px;
 }
